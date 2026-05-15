@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -271,14 +269,15 @@
             background: var(--card-bg);
             border-radius: 18px;
             overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(251, 191, 36, 0.25);
+            transform: translateY(-18px);
+            box-shadow: 0 20px 35px rgba(120, 89, 8, 0.45),
+            0 0 15px rgba(251, 191, 36, 0.15);
         }
 
         .product-image {
@@ -432,6 +431,24 @@
 
             .section-title {
                 font-size: 1.5rem;
+            }
+
+            .search-container {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .search-box {
+                width: 100%;
+            }
+
+            .nav-buttons {
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .cart-btn {
+                align-self: flex-start;
             }
         }
 
@@ -588,12 +605,11 @@
 <body>
     <!-- ============ Navigation Bar ============ -->
 <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container-fluid px-4">
+    <div class="container-fluid px-3 px-lg-4">
 
-        <!-- Logo -->
-        <a class="navbar-brand" href="#">
-            <i class="fas fa-coins"></i>
-            XauMarket
+        <!-- Brand -->
+        <a class="navbar-brand" href="index.php">
+            <i class="fas fa-coins"></i> XauMarket
         </a>
 
         <!-- Mobile Toggle -->
@@ -601,33 +617,32 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Navbar Content -->
         <div class="collapse navbar-collapse" id="navbarNav">
 
-            <!-- Search Bar -->
-            <div class="mx-auto search-container">
+            <!-- SEARCH -->
+            <div class="mx-auto search-container my-3 my-lg-0">
                 <div class="search-box">
                     <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Search gadgets, books, fashion...">
+                    <input type="text" placeholder="Search products...">
                 </div>
             </div>
 
-            <!-- Right Buttons -->
-            <div class="ms-auto nav-buttons">
+            <!-- RIGHT ACTIONS -->
+            <div class="ms-auto nav-buttons d-flex flex-column flex-lg-row gap-2 align-items-center">
 
-                <!-- Cart Icon -->
+                <!-- Cart -->
                 <button class="cart-btn">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-badge">0</span>
                 </button>
 
                 <!-- Login -->
-                <a href="login.php" class="btn-login text-decoration-none">
+                <a href="login.php" class="btn-login text-decoration-none w-100 w-lg-auto text-center">
                     <i class="fas fa-sign-in-alt"></i> Login
                 </a>
 
                 <!-- Signup -->
-                <a href="signup.php" class="btn-signup text-decoration-none">
+                <a href="signup.php" class="btn-signup text-decoration-none w-100 w-lg-auto text-center">
                     <i class="fas fa-user-plus"></i> Sign Up
                 </a>
 
@@ -919,6 +934,46 @@
         </div>
     </footer>
 
+    <!-- ============ AUTH MODAL (Login Required) ============ -->
+    <div class="modal fade" id="authModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+        <!-- Header -->
+        <div class="login-modal-header">
+            <i class="fas fa-user-lock"></i>
+            <h3 class="mt-2">Login Required</h3>
+            <p style="opacity:0.85;">Please login or sign up to continue shopping</p>
+        </div>
+
+        <!-- Body -->
+        <div class="login-form">
+
+            <div class="d-grid gap-3">
+            <a href="login.php" class="btn btn-login-submit">
+                <i class="fas fa-sign-in-alt"></i> Login
+            </a>
+
+            <a href="signup.php" class="btn btn-outline-dark btn-lg rounded-3">
+                <i class="fas fa-user-plus"></i> Sign Up
+            </a>
+            </div>
+
+            <hr class="my-4">
+
+            <p class="text-center text-muted" style="font-size:0.9rem;">
+            You must have an account to add items to cart
+            </p>
+
+            <button class="btn btn-light w-100 mt-2" data-bs-dismiss="modal">
+            Maybe Later
+            </button>
+        </div>
+
+        </div>
+    </div>
+    </div>
+
     
 
     <!-- Bootstrap JS -->
@@ -975,11 +1030,17 @@
             });
         });
 
+        const authModal = new bootstrap.Modal(document.getElementById('authModal'));
+
         document.querySelectorAll('.btn-add-cart').forEach(btn => {
-            btn.addEventListener('click', function() {
-                alert('Added to cart!');
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // show login required modal instead of adding to cart
+                authModal.show();
             });
         });
     </script>
+
 </body>
 </html>
