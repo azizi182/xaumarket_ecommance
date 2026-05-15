@@ -1,9 +1,11 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShopHub - Your Modern Shopping Destination</title>
+    <title>XauMarket - Your Modern Shopping Destination</title>
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -20,19 +22,21 @@
         }
 
         :root {
-            --primary-color: #1a3a52;
-            --secondary-color: #0f8b8d;
-            --accent-color: #ff6b35;
-            --light-bg: #f8f9fa;
+            --primary-color: #111827;
+            --secondary-color: #1f2937;
+            --accent-color: #fbbf24;
+            --gold-light: #fcd34d;
+            --light-bg: #f5f5f5;
             --white: #ffffff;
-            --text-dark: #2c3e50;
-            --border-light: #e0e0e0;
+            --text-dark: #1e293b;
+            --border-light: #e5e7eb;
+            --card-bg: #ffffff;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: var(--text-dark);
-            background-color: var(--light-bg);
+            background: linear-gradient(135deg, #f9fafb, #f3f4f6);
             overflow-x: hidden;
         }
 
@@ -88,13 +92,14 @@
         }
 
         .btn-signup {
-            background: linear-gradient(135deg, var(--accent-color), #ff8c5a);
-            color: var(--white);
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: #111827;
+            font-weight: 700;
         }
 
         .btn-signup:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+            box-shadow: 0 8px 20px rgba(251, 191, 36, 0.4);
         }
 
         /* ============ Hero Section / Featured Carousel ============ */
@@ -263,17 +268,17 @@
         }
 
         .product-card {
-            background: var(--white);
-            border-radius: 10px;
+            background: var(--card-bg);
+            border-radius: 18px;
             overflow: hidden;
-            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
-            border: 1px solid var(--border-light);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(251, 191, 36, 0.25);
         }
 
         .product-image {
@@ -451,32 +456,185 @@
         .product-card {
             animation: fadeInUp 0.6s ease-out;
         }
+
+        /* ===== Search Bar ===== */
+        .search-container {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .search-box {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 50px;
+            padding: 0.7rem 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+        }
+
+        .search-box:hover,
+        .search-box:focus-within {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 15px rgba(251,191,36,0.3);
+        }
+
+        .search-box i {
+            color: #d1d5db;
+        }
+
+        .search-box input {
+            border: none;
+            outline: none;
+            background: transparent;
+            width: 100%;
+            color: white;
+            font-size: 0.95rem;
+        }
+
+        .search-box input::placeholder {
+            color: #d1d5db;
+        }
+
+        /* ===== Cart Button ===== */
+        .cart-btn {
+            position: relative;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+
+        .cart-btn:hover {
+            background: var(--accent-color);
+            color: #111827;
+            transform: translateY(-2px);
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -5px;
+            right: -3px;
+            background: #ef4444;
+            color: white;
+            font-size: 0.7rem;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ===== Login Modal ===== */
+        .modal-content {
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .login-modal-header {
+            background: linear-gradient(135deg, #111827, #1f2937);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .login-modal-header i {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .login-form {
+            padding: 2rem;
+        }
+
+        .form-control {
+            border-radius: 12px;
+            padding: 0.9rem 1rem;
+            border: 1px solid #d1d5db;
+        }
+
+        .form-control:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 10px rgba(251,191,36,0.3);
+        }
+
+        .btn-login-submit {
+            width: 100%;
+            padding: 0.9rem;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: #111827;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .btn-login-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(251,191,36,0.3);
+        }
     </style>
 </head>
 
 <body>
     <!-- ============ Navigation Bar ============ -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container-fluid">
-            <div class="navbar-brand">
-                <i class="fas fa-shopping-bag"></i>
-                ShopHub
-            </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <div class="ms-auto nav-buttons">
-                    <button class="btn-login">
-                        <i class="fas fa-sign-in-alt"></i> Login
-                    </button>
-                    <button class="btn-signup">
-                        <i class="fas fa-user-plus"></i> Sign Up
-                    </button>
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid px-4">
+
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">
+            <i class="fas fa-coins"></i>
+            XauMarket
+        </a>
+
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Content -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <!-- Search Bar -->
+            <div class="mx-auto search-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search gadgets, books, fashion...">
                 </div>
             </div>
+
+            <!-- Right Buttons -->
+            <div class="ms-auto nav-buttons">
+
+                <!-- Cart Icon -->
+                <button class="cart-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge">0</span>
+                </button>
+
+                <!-- Login -->
+                <a href="login.php" class="btn-login text-decoration-none">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </a>
+
+                <!-- Signup -->
+                <a href="signup.php" class="btn-signup text-decoration-none">
+                    <i class="fas fa-user-plus"></i> Sign Up
+                </a>
+
+            </div>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <div class="container">
         <!-- ============ Featured Products Carousel ============ -->
@@ -485,7 +643,7 @@
                 <div class="swiper-wrapper">
                     <!-- Slide 1 -->
                     <div class="swiper-slide">
-                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                        <div style="background: linear-gradient(135deg, #111827 0%, #1e293b 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
                             <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;">
                                 <i class="fas fa-laptop" style="font-size: 5rem; color: rgba(255,255,255,0.2);"></i>
                             </div>
@@ -709,7 +867,7 @@
                 <!-- About Us -->
                 <div class="footer-section">
                     <h4><i class="fas fa-store"></i> About Us</h4>
-                    <p style="margin-bottom: 1rem;">ShopHub is your ultimate destination for quality products at the best prices. We're committed to providing an exceptional shopping experience with premium customer service.</p>
+                    <p style="margin-bottom: 1rem;">XauMarket is your ultimate destination for quality products at the best prices. We're committed to providing an exceptional shopping experience with premium customer service.</p>
                     <div>
                         <a href="#" style="margin-right: 1rem;"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" style="margin-right: 1rem;"><i class="fab fa-twitter"></i></a>
@@ -722,9 +880,9 @@
                 <div class="footer-section">
                     <h4><i class="fas fa-phone"></i> Contact Us</h4>
                     <ul>
-                        <li><i class="fas fa-envelope"></i> Email: <a href="mailto:support@shophub.com">support@shophub.com</a></li>
-                        <li><i class="fas fa-phone"></i> Phone: <a href="tel:+1800123456">+1-800-123-456</a></li>
-                        <li><i class="fas fa-map-marker-alt"></i> Address: 123 Commerce Street, Shopping City, SC 12345</li>
+                        <li><i class="fas fa-envelope"></i> Email: <a href="mailto:support@XauMarket.com">support@XauMarket.com</a></li>
+                        <li><i class="fas fa-phone"></i> Phone: <a href="tel:+1800123456">+6012-213-3456</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> Address: 123 Commerce Street, Subang Jaya, SC 76450</li>
                         <li><i class="fas fa-clock"></i> Hours: Mon-Fri 9AM-6PM EST</li>
                     </ul>
                 </div>
@@ -756,10 +914,12 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2024 ShopHub. All rights reserved. | <a href="#" style="color: var(--accent-color);">Privacy Policy</a> | <a href="#" style="color: var(--accent-color);">Terms of Service</a></p>
+                <p>&copy; 2020 XauMarket. All rights reserved. | <a href="#" style="color: var(--accent-color);">Privacy Policy</a> | <a href="#" style="color: var(--accent-color);">Terms of Service</a></p>
             </div>
         </div>
     </footer>
+
+    
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -807,17 +967,7 @@
         });
 
         // Add click handlers for buttons
-        document.querySelectorAll('.btn-login').forEach(btn => {
-            btn.addEventListener('click', function() {
-                alert('Login functionality coming soon!');
-            });
-        });
-
-        document.querySelectorAll('.btn-signup').forEach(btn => {
-            btn.addEventListener('click', function() {
-                alert('Sign up functionality coming soon!');
-            });
-        });
+        
 
         document.querySelectorAll('.btn-shop-now').forEach(btn => {
             btn.addEventListener('click', function() {
