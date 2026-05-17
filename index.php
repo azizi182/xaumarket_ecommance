@@ -521,27 +521,18 @@
 
             /* Search Wrapper */
             .search-wrapper{
-                display:flex;
-                align-items:center;
-                gap:10px;
+            display:flex; 
+            align-items:center;
+            gap:10px;
 
-                width:100%;
-                max-width: 1100px;
+            background:var(--secondary-color);
 
-                margin:auto;
+            padding:10px;
+            border-radius:22px;
 
-                background: var(--secondary-color);
-                border:1px solid rgba(255,255,255,0.4);
-
-                padding:10px;
-                border-radius:24px;
-
-                backdrop-filter: blur(10px);
-
-                box-shadow:
-                    0 10px 35px rgba(0,0,0,0.08),
-                    0 0 0 1px rgba(255,255,255,0.4) inset;
-            }
+            box-shadow:
+            0 10px 30px rgba(0,0,0,0.08);
+        }
 
             /* Search Box */
             .search-box{

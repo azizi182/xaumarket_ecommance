@@ -506,8 +506,7 @@ body{
 
                 <p class="product-desc">
                     Premium wireless headphones with immersive sound quality,
-                    long battery life and ultra comfortable design for
-                    daily usage, gaming and entertainment.
+                    ultra comfort design and long battery performance.
                 </p>
 
                 <!-- SELLER -->
@@ -530,14 +529,15 @@ body{
                 <!-- BUTTON -->
                 <div class="action-buttons">
 
-                    <button class="btn-chat">
-                        <i class="fas fa-comment"></i>
-                        Chat
-                    </button>
+                    <a href="chat_detail.php" class="btn-chat text-decoration-none text-center">
+                        <i class="fas fa-comments"></i>
+                        Chat Now
+                    </a>
 
-                    <button class="btn-offer">
+                    <a href="make_offer.php" class="btn-offer text-decoration-none text-center">
+                        <i class="fas fa-handshake"></i>
                         Make Offer
-                    </button>
+                    </a>
 
                 </div>
 
