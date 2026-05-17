@@ -58,11 +58,11 @@ body{
 /* ================= PAGE ================= */
 
 .offer-section{
-    padding:45px 0;
+    padding:30px 0;
 }
 
 .offer-wrapper{
-    max-width:1200px;
+    max-width:1500px;
     margin:auto;
 }
 

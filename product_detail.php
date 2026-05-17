@@ -340,6 +340,152 @@ body{
     color:#fbbf24;
 }
 
+/* ================= REVIEW BUTTON ================= */
+
+.btn-review{
+    width:100%;
+
+    margin-top:12px;
+
+    border:none;
+
+    padding:14px;
+
+    border-radius:14px;
+
+    font-weight:700;
+
+    background:white;
+
+    color:#111827;
+
+    border:1px solid #e5e7eb;
+
+    transition:0.3s;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.05);
+}
+
+.btn-review:hover{
+    background:#111827;
+    color:white;
+
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 15px 30px rgba(0,0,0,0.12);
+}
+
+/* ================= MODAL ================= */
+
+.modal-content{
+    border:none;
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 25px 50px rgba(0,0,0,0.18);
+}
+
+.review-modal-header{
+    background:linear-gradient(135deg,#111827,#1f2937);
+
+    color:white;
+
+    padding:28px;
+}
+
+.review-modal-title{
+    font-size:1.5rem;
+    font-weight:800;
+}
+
+.review-modal-body{
+    padding:30px;
+}
+
+/* ================= STAR RATING ================= */
+
+.rating-stars{
+    display:flex;
+    gap:12px;
+
+    margin:20px 0 30px;
+}
+
+.rating-stars i{
+    font-size:2rem;
+
+    cursor:pointer;
+
+    color:#d1d5db;
+
+    transition:0.3s;
+}
+
+.rating-stars i:hover{
+    color:#fbbf24;
+
+    transform:scale(1.12);
+}
+
+.review-input{
+    width:100%;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:18px;
+
+    padding:16px 18px;
+
+    background:#f9fafb;
+
+    outline:none;
+
+    transition:0.3s;
+}
+
+.review-input:focus{
+    border-color:#fbbf24;
+
+    background:white;
+
+    box-shadow:
+    0 10px 25px rgba(251,191,36,0.18);
+}
+
+.submit-review-btn{
+    width:100%;
+
+    margin-top:20px;
+
+    border:none;
+
+    padding:16px;
+
+    border-radius:16px;
+
+    font-weight:700;
+
+    background:linear-gradient(135deg,#fbbf24,#f59e0b);
+
+    color:#111827;
+
+    transition:0.3s;
+
+    box-shadow:
+    0 15px 30px rgba(251,191,36,0.25);
+}
+
+.submit-review-btn:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 20px 35px rgba(251,191,36,0.35);
+}
+
 /* ================= MOBILE ================= */
 
 @media(max-width:992px){
@@ -546,6 +692,8 @@ body{
                     Buy Now
                 </button>
 
+                
+
             </div>
 
         </div>
@@ -559,6 +707,13 @@ body{
         <h2 class="section-title">
             Reviews & Feedback
         </h2>
+
+        <a href="review_detail.php" class="btn-review text-decoration-none text-center" data-bs-toggle="modal" data-bs-target="#reviewModal">
+            <i class="fas fa-star"></i>
+            Review & Feedback
+        </a>
+
+        
 
         <!-- REVIEW -->
         <div class="review-card">
